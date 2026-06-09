@@ -1,0 +1,41 @@
+2026-06-08 10:24:14 UTC
+Windows-11-10.0.26200-SP0
+Ren'Py 8.5.4.26052801+nightly
+
+Early init took 42 ms
+Loading error handling took 25 ms
+Loading script took 111 ms
+Loading save slot metadata took 33 ms
+Loading persistent took 0 ms
+Running init code took 45 ms
+Loading analysis data took 7 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 8 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 28 ms
+DPI scale factor: 1.500000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 202 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 13 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+﻿Ren'Py 8.5.4.26052801+nightly lint report, generated at: Mon Jun  8 18:24:14 2026
+
+
+Statistics:
+
+The game contains 940 dialogue blocks, containing 940 words and 18,478
+characters, for an average of 1.0 words and 20 characters per block.
+
+The game contains 5 menus, 203 images, and 24 screens.
+
+
+Lint is not a substitute for thorough testing. Remember to update Ren'Py
+before releasing. New releases fix bugs and improve compatibility.
