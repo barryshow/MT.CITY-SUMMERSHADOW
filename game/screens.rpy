@@ -97,18 +97,14 @@ screen say(who, what):
     window:
         id "window"
 
+        text what id "what"
+
         if who is not None:
 
             window:
                 id "namebox"
                 style "namebox"
                 text who id "who"
-
-        vbox:
-            spacing 2
-            text what id "what" style "say_dialogue"
-            # Show English translation below if available
-            text _t(what) id "what_en" style "say_dialogue_en"
 
 
     ## 如果有对话框头像，会将其显示在文本之上。请不要在手机界面下显示这个，因为
@@ -159,11 +155,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
 
-style say_dialogue_en is say_dialogue:
-    size 16
-    color "#cccccc"
-    yoffset 2
-    line_spacing 1
+
     ypos gui.dialogue_ypos
 
     adjust_spacing False
@@ -364,16 +356,24 @@ screen main_menu():
     ## use 语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
     use navigation
 
-    if gui.show_name:
+    null height 20
 
-        vbox:
-            style "main_menu_vbox"
+    vbox:
+        style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+        text "[config.name!t]":
+            style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+        text "[config.version]":
+            style "main_menu_version"
+
+        null height 40
+
+        text "独立制作 by BarryShow":
+            style "main_menu_credits"
+
+        text "Built with Ren'Py & Claude Code":
+            style "main_menu_credits_en"
 
 
 style main_menu_frame is empty
@@ -403,6 +403,19 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
+
+style main_menu_credits:
+    properties gui.text_properties("main_menu", accent=True)
+    size 20
+    yoffset 10
+    color "#ffffff"
+
+style main_menu_credits_en:
+    properties gui.text_properties("main_menu", accent=True)
+    size 14
+    yoffset 2
+    color "#aaaaaa"
+    kerning 1
 
 
 ## 游戏菜单屏幕 ######################################################################
@@ -768,6 +781,13 @@ screen preferences():
                     label _("自动前进时间")
 
                     bar value Preference("auto-forward time")
+
+                    ## 语言切换
+                    label _("语言 / Language")
+
+                    hbox:
+                        textbutton _("中文") action Language(None)
+                        textbutton _("English") action Language("english")
 
                 vbox:
 
@@ -1152,9 +1172,10 @@ screen confirm(message, yes_action, no_action):
     python:
         _confirm_msg = message
         _confirm_translations = {
-            "Are you sure you want to quit?": "您确定要退出游戏吗？",
-            "Are you sure?": "您确定吗？",
-            "Are you sure you want to return to the main menu?\nThis will lose unsaved progress.": "您确定要返回主菜单吗？\n未保存的进度将会丢失。",
+            "Are you sure you want to quit?": "⚠ 确认退出游戏？\n未保存的进度将会丢失。",
+            "Are you sure?": "⚠ 您确定吗？",
+            "Are you sure you want to return to the main menu?\nThis will lose unsaved progress.": "⚠ 确认返回主菜单？\n未保存的进度将会丢失。",
+            "Are you sure you want to overwrite your save?": "⚠ 确认覆盖存档？",
         }
         _confirm_msg = _confirm_translations.get(message, message)
 
@@ -1168,12 +1189,13 @@ screen confirm(message, yes_action, no_action):
             label _confirm_msg:
                 style "confirm_prompt"
                 xalign 0.5
+                yalign 0.5
 
             hbox:
                 xalign 0.5
                 spacing 150
 
-                textbutton _("确定") action yes_action
+                textbutton _("确定退出") action yes_action
                 textbutton _("取消") action no_action
 
     ## 右键点击退出并答复 no（取消）。
