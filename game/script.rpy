@@ -274,7 +274,7 @@ image me smile_sad = "characters_alpha/me_stand_alone.png"
 image me take_gift = "characters_alpha/me_pay.png"
 image me wave = "characters_alpha/me_stand_alone.png"
 
-image 主持人_enter = "characters_alpha/waiter.png"
+image 主持人_enter = "characters_alpha/host.png"
 
 image 王总_enter = "characters_alpha/boss_wang.png"
 image 王总_nod = "characters_alpha/boss_wang.png"
@@ -334,7 +334,6 @@ init python:
     _weather_images = [
         "weather_clear", "weather_clear_evening", "weather_heavy_rain",
         "weather_hot_summer_mountain_city", "weather_rain_start", "weather_sunny",
-        "weather_clear_night", "weather_rainy", "weather_sunset",
     ]
     for _w in _weather_images:
         renpy.image(tuple(_w.split()), Transform("backgrounds/" + _w + ".png", xysize=(1280, 720)))
@@ -344,6 +343,7 @@ label start:
 
     # 第一幕：非典型初遇（约5分钟）
     scene bg_mountain_city_convention_outside_corner at bg_cover  with fade
+    play music "audio/bgm/bgm_encounter.mp3"
 
     我 "（七月的山城，空气粘稠得像融化的糖浆。）"
     我 "（会展中心里的空调形同虚设，三万多人挤在一个巨大的铁皮盒子里，汗味、爆米花味和廉价香水味混合成一种令人窒息的味道。）"
@@ -368,8 +368,10 @@ label start:
     我 "（就像是从另一个世界掉落到这里的公主，狼狈却依然保持着最后的骄傲。）"
 
     scene cg_first_meeting with fade
+    play music "audio/bgm/bgm_encounter.mp3"
     我 "（我屏住了呼吸。阳光落在她身上，把那一身黑色蕾丝照得像暗夜里的星河。那一刻，我忘记了闷热，忘记了嘈杂，眼前只剩下这个画面。）"
     scene bg_mountain_city_convention_outside_corner at bg_cover  with fade
+    play music "audio/bgm/bgm_encounter.mp3"
     show anya sitting on steps at anya_std zorder 10
 
     hide anya
@@ -512,6 +514,7 @@ label main_story:
 
     # 第四幕：是工作还是约会？（寻找拍摄地+冰粉互动）
     scene bg_old_town_street_sunset at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
 
     我 "（三天后。）"
     我 "（我和安雅约好了在老城区见面，为她的新款裙子寻找外景拍摄地。）"
@@ -547,6 +550,7 @@ label main_story:
     我 "来了来了。"
 
     scene bg_old_mountain_city_alley at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
     show anya look around at anya_std zorder 10
     voice "audio/voice/anya_0020.mp3"
     anya "嗯……这里的墙壁太新了，没有那种年代感。而且光线太散了，拍出来会显得脸很平。"
@@ -568,6 +572,7 @@ label main_story:
     anya "嗯，有道理。那我们再往前走走。"
 
     scene bg_abandoned_factory_gate_mountain_city at bg_cover  with dissolve
+    play music "audio/bgm/bgm_encounter.mp3"
     show anya excited at anya_std zorder 10
     voice "audio/voice/anya_0023.mp3"
     anya "哇！这里太棒了！"
@@ -604,8 +609,10 @@ label main_story:
     我 "（心跳，好像漏了一拍。）"
 
     scene cg_rooftop_sunset with fade
+    play music "audio/bgm/bgm_sunset.mp3"
     我 "（我们沿着生锈的铁楼梯爬上了工厂的天台。脚下是斑驳的水泥地，四周没有围墙，只有生锈的栏杆。夕阳就悬在江面上方，把整片天空烧成了橙红色。安雅走到栏杆边，风把她的裙摆和金发一起吹起来。远处的跨江大桥亮起了灯，像一条金色的项链横卧在江面上。）"
     scene bg_abandoned_factory_gate_mountain_city at bg_cover  with dissolve
+    play music "audio/bgm/bgm_sunset.mp3"
     show anya turn around smile at anya_std zorder 10
 
     voice "audio/voice/me_0016.mp3"
@@ -641,8 +648,10 @@ label main_story:
     anya "那……那我们一起撑吧。"
 
     scene cg_share_umbrella with fade
+    play music "audio/bgm/bgm_warm.mp3"
     我 "（伞不大，我们靠得很近。她的肩膀偶尔碰到我的手臂，冰凉冰凉的。雨声很大，大到好像整个世界只剩下我们两个人和这一把伞。）"
     scene bg_bingfen_shop_entrance at bg_cover  with dissolve
+    play music "audio/bgm/bgm_warm.mp3"
     我 "（我们快步跑到了附近一家冰粉店的屋檐下躲雨。雨越下越大，豆大的雨点砸在青石板路上，溅起一朵朵水花。）"
 
     show anya wipe rain at anya_std zorder 10
@@ -665,6 +674,7 @@ label main_story:
     anya "那……我们进去坐一会儿吧。"
 
     scene bg_bingfen_shop_interior at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
     show anya sit down at anya_std zorder 10
     voice "audio/voice/boss_lady_0002.mp3"
     老板娘 "两位想吃点啥子？我们这里有红糖冰粉、糍粑冰粉、玫瑰冰粉，还有凉虾凉糕。"
@@ -764,6 +774,7 @@ label main_story:
     我 "嗯，确实不错。"
 
     scene bg_bingfen_shop_interior_rain_stop at bg_cover  with dissolve
+    play music "audio/bgm/bgm_soft.mp3"
     我 "（不知不觉，雨已经停了。天空被雨水洗过，变得格外蓝。空气也变得清新了很多，带着一股泥土和黄桷兰的香味。）"
 
     voice "audio/voice/me_0026.mp3"
@@ -791,6 +802,7 @@ label main_story:
     anya "哼……那好吧。下次我请你吃火锅。"
 
     scene bg_street_after_rain_mountain_city at bg_cover  with dissolve
+    play music "audio/bgm/bgm_soft.mp3"
     show anya walk beside me at anya_std zorder 10
     我 "（我们并肩走在雨后的青石板路上。路面湿漉漉的，倒映着红灯笼的光芒。空气清新，微风拂面，让人感觉很舒服。）"
 
@@ -806,6 +818,7 @@ label main_story:
     我 "（我笑着摇了摇头。她还是这么嘴硬。）"
 
     scene bg_university_dormitory_gate at bg_cover  with dissolve
+    play music "audio/bgm/bgm_sunset.mp3"
     show anya stop at anya_std zorder 10
     voice "audio/voice/anya_0054.mp3"
     anya "我到了。我住女生宿舍，你就不用送进去了。"
@@ -859,6 +872,7 @@ label main_story:
 
     # 第五幕：第一次拍摄（Demo结尾，留下悬念）
     scene bg_abandoned_factory_afternoon_mountain_city at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
 
     我 "（后天下午三点。）"
     我 "（我准时来到了废弃工厂门口。我带了两个相机，三个镜头，还有反光板、补光灯、三脚架，几乎把我所有的家当都带来了。）"
@@ -935,6 +949,7 @@ label chat_up_branch:
 
     # 后续剧情与主线基本一致，仅对话增加暧昧拌嘴
     scene bg_old_town_street_sunset at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
     我 "（隔天和安雅一同寻找外景。）"
 
     show anya walking ahead at anya_std zorder 10
@@ -955,6 +970,7 @@ label chat_up_branch:
     anya "你少贫嘴！专心找场地。再废话我扣你工资。"
 
     scene bg_old_mountain_city_alley at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
     show anya look around at anya_std zorder 10
     voice "audio/voice/anya_0071.mp3"
     anya "这里不行，太普通了。"
@@ -963,6 +979,7 @@ label chat_up_branch:
     anya "前面看看。"
 
     scene bg_abandoned_factory_gate_mountain_city at bg_cover  with dissolve
+    play music "audio/bgm/bgm_encounter.mp3"
     show anya excited at anya_std zorder 10
     voice "audio/voice/anya_0073.mp3"
     anya "这里完美！林辰你眼光可以啊。"
@@ -974,8 +991,10 @@ label chat_up_branch:
     anya "臭美。"
 
     scene cg_rooftop_sunset with fade
+    play music "audio/bgm/bgm_sunset.mp3"
     我 "（我们爬上了工厂的天台。夕阳正好挂在江面上方，把整片天空染成了橙红色。安雅的酒红色裙摆被风吹起来，和天边的晚霞融为一体。）"
     scene bg_abandoned_factory_gate_mountain_city at bg_cover  with dissolve
+    play music "audio/bgm/bgm_sunset.mp3"
     show anya turn around smile at anya_std zorder 10
 
     # 下雨躲雨、吃冰粉、送回宿舍流程与主线一致
@@ -989,13 +1008,16 @@ label chat_up_branch:
     我 "幸好我带了伞，一起走吧。"
 
     scene cg_share_umbrella with fade
+    play music "audio/bgm/bgm_warm.mp3"
     我 "（伞不大，她靠得很近。我能闻到她身上淡淡的香水味，被雨水冲得若有若无。）"
     scene bg_bingfen_shop_entrance at bg_cover  with dissolve
+    play music "audio/bgm/bgm_warm.mp3"
     show 老板娘 smile at npc_std zorder 10
     voice "audio/voice/boss_lady_0006.mp3"
     老板娘 "进来躲雨吃碗冰粉吧。"
 
     scene bg_bingfen_shop_interior at bg_cover  with dissolve
+    play music "audio/bgm/bgm_daily.mp3"
     # 冰粉、聊梦想、下雨停后离场流程一致
     show anya eat bingfen at anya_std zorder 10
     voice "audio/voice/anya_0076.mp3"
@@ -1009,6 +1031,7 @@ label chat_up_branch:
     anya "谁要你请……我自己有钱。"
 
     scene bg_university_dormitory_gate at bg_cover  with dissolve
+    play music "audio/bgm/bgm_sunset.mp3"
     voice "audio/voice/anya_0078.mp3"
     anya "今天辛苦啦，下次拍摄再联系。"
     voice "audio/voice/anya_0079.mp3"
@@ -1199,9 +1222,11 @@ label chapter_2:
             我 "少废话，过来。"
 
             show anya blush at anya_std zorder 10
+            voice "audio/voice/anya_0397.mp3"
             anya "喂！你干什么啊！放开我！"
 
             show anya sit down at anya_std zorder 10
+            voice "audio/voice/anya_0398.mp3"
             anya "（小声嘟囔）真是的，一点都不温柔。"
 
         "温柔劝说，耐心等她过来":
@@ -1214,6 +1239,7 @@ label chapter_2:
             我 "我学过一点急救，不会弄疼你的。"
 
             show anya look down at anya_std zorder 10
+            voice "audio/voice/anya_0399.mp3"
             anya "……那好吧。"
 
     # ---- 处理伤口 ----
@@ -1290,13 +1316,16 @@ label chapter_2:
         我 "怎么，害怕了？"
 
         show anya pout at anya_std zorder 10
+        voice "audio/voice/anya_0400.mp3"
         anya "谁……谁害怕了！我只是……只是有点意外而已。"
 
         hide me
         show me smile sincere at me_std zorder 10
         我 "别怕，有我在呢。"
 
+        voice "audio/voice/anya_0401.mp3"
         anya "……"
+        voice "audio/voice/anya_0402.mp3"
         anya "谁要你保护啊。"
 
         我 "（她嘴上说着不要，身体却不自觉地向我靠近了一点。）"
@@ -1309,6 +1338,7 @@ label chapter_2:
         我 "我们就在这里等一会儿，应该很快就会来电的。"
 
         show anya look down at anya_std zorder 10
+        voice "audio/voice/anya_0403.mp3"
         anya "……嗯。"
 
     # ---- 分享糗事 ----
@@ -1444,12 +1474,14 @@ label chapter_2:
     # 分支差异：肢体接触
     if branch_type == 1 and anya_affection >= 60:
         show anya turn to me at anya_std zorder 10
+        voice "audio/voice/anya_0404.mp3"
         anya "林辰，你看！那只萤火虫飞到我手上了！"
 
         hide me
         show me looking anya at me_std zorder 10
         我 "（我走到她身边，低头看着她手上的萤火虫。）"
 
+        voice "audio/voice/anya_0405.mp3"
         anya "你看你看！它在发光！"
 
         $ anya_affection += 6
@@ -1463,6 +1495,7 @@ label chapter_2:
         我 "是啊，真的很漂亮。"
 
         show anya turn to me at anya_std zorder 10
+        voice "audio/voice/anya_0406.mp3"
         anya "林辰，快帮我拍几张照片！我要和萤火虫合影！"
 
         $ anya_affection += 4
@@ -1760,7 +1793,6 @@ label chapter_3:
 
     show anya sit down at anya_std zorder 10
     show anya look down at anya_std zorder 10
-    voice "audio/voice/anya_0162.mp3"
     anya "（蹲在墙角，双手抱着膝盖，肩膀微微颤抖）"
 
     hide anya
@@ -1897,6 +1929,7 @@ label chapter_3:
 
     if branch_type == 1:
         show anya smile smug at anya_std zorder 10
+        voice "audio/voice/anya_0407.mp3"
         anya "喂，林辰。你说你这么帮我，是不是喜欢我啊？"
 
         hide anya
@@ -1905,11 +1938,14 @@ label chapter_3:
 
         hide me
         show anya pout at anya_std zorder 10
+        voice "audio/voice/anya_0408.mp3"
         anya "切，不说就算了。"
+        voice "audio/voice/anya_0409.mp3"
         anya "（小声嘟囔）明明就是……"
 
     else:
         show anya look down at anya_std zorder 10
+        voice "audio/voice/anya_0410.mp3"
         anya "林辰。对不起啊，耽误你这么多时间。"
 
         hide anya
@@ -2306,7 +2342,6 @@ label chapter_4:
 
     hide me
     show anya nod at anya_std zorder 10
-    voice "audio/voice/anya_0223.mp3"
     anya "（认真地签着合同，一笔一划，非常仔细。）"
 
     我 "（我站在旁边看着她，心里有些感慨。）"
@@ -2348,9 +2383,11 @@ label chapter_4:
 
             hide me
             show anya excited at anya_std zorder 10
+            voice "audio/voice/anya_0411.mp3"
             anya "好啊好啊！我早就想吃火锅了！"
 
             show anya blush at anya_std zorder 10
+            voice "audio/voice/anya_0412.mp3"
             anya "（连忙清了清嗓子）咳……既然你这么诚心邀请，那我就勉强陪你去吧。"
 
             jump hot_pot_date
@@ -2362,9 +2399,11 @@ label chapter_4:
 
             hide me
             show anya look down at anya_std zorder 10
+            voice "audio/voice/anya_0413.mp3"
             anya "……哦，好吧。那……宣传册的事，我们微信联系。"
 
             show anya turn to leave at anya_std zorder 10
+            voice "audio/voice/anya_0414.mp3"
             anya "拜拜。"
 
             我 "（看着她有点失落的背影，我心里有点后悔。）"
@@ -2527,7 +2566,6 @@ label hot_pot_date:
 
     hide me
     show anya blush at anya_std zorder 10
-    voice "audio/voice/anya_0241.mp3"
     anya "（用纸巾擦了擦嘴，偷偷看了我一眼，发现我在看她，连忙低下头）"
 
     $ anya_affection += 3
@@ -2598,7 +2636,6 @@ label hot_pot_date:
 
     $ anya_affection += 4
     我 "（我们的手指不小心碰到了一起，两个人都愣了一下。）"
-    voice "audio/voice/anya_0252.mp3"
     anya "（连忙收回手，低下头，脸红得像熟透的苹果）"
     我 "（我的心跳也漏了一拍，连忙移开视线。）"
     我 "（火锅的热气模糊了我们的视线，但我却能清晰地听到自己的心跳声。）"
@@ -2676,20 +2713,27 @@ label birthday_surprise:
     我 "希望你每次看到它，都能想起那个美好的夜晚。"
 
     if anya_affection >= 80:
+        voice "audio/voice/anya_0415.mp3"
         anya "（眼泪一下子掉了下来）谢谢你……林辰。"
+        voice "audio/voice/anya_0416.mp3"
         anya "这是我收到过最好的生日礼物。"
+        voice "audio/voice/anya_0417.mp3"
         anya "以前从来没有人记得我的生日，也没有人给我送过礼物。"
 
         我 "以后每年的生日，我都陪你过。"
 
     elif anya_affection >= 50:
+        voice "audio/voice/anya_0418.mp3"
         anya "（红着眼眶，吸了吸鼻子）哼……还行吧，勉强及格。"
+        voice "audio/voice/anya_0419.mp3"
         anya "（小声）其实……挺好看的。"
 
         我 "喜欢就好。"
 
     else:
+        voice "audio/voice/anya_0420.mp3"
         anya "……谢谢。"
+        voice "audio/voice/anya_0421.mp3"
         anya "（紧紧地抱着相框，眼神复杂）"
 
 # ---- 第四幕：江边告白伏笔 ----
@@ -2756,7 +2800,9 @@ label river_confession_foreshadow:
 
             hide me
             show anya blush at anya_std zorder 10
+            voice "audio/voice/anya_0422.mp3"
             anya "……"
+            voice "audio/voice/anya_0423.mp3"
             anya "（低下头，小声说）笨蛋。"
 
         "我们是搭档嘛":
@@ -2777,11 +2823,14 @@ label river_confession_foreshadow:
 
             hide me
             show anya look down at anya_std zorder 10
+            voice "audio/voice/anya_0424.mp3"
             anya "（她看出我的尴尬，也沉默了。）"
 
             hide me
             show anya look down at anya_std zorder 10
+            voice "audio/voice/anya_0425.mp3"
             anya "……哦，对。搭档。"
+            voice "audio/voice/anya_0426.mp3"
             anya "（转过头，继续看着江面，眼神有点失落）"
 
 # ---- 第五幕：送回宿舍 ----
@@ -2799,7 +2848,6 @@ label send_back_dorm:
 
     hide me
     show anya turn to leave at anya_std zorder 10
-    voice "audio/voice/anya_0268.mp3"
     anya "（走了几步，又转回身）"
 
     $ anya_affection += 4
@@ -2838,7 +2886,6 @@ label chapter_5:
 
 
     show anya casual work at anya_std zorder 10
-    voice "audio/voice/anya_0272.mp3"
     anya "（正蹲在地上整理衣服，头发有点乱，脸上沾了一点线头）"
     voice "audio/voice/anya_0273.mp3"
     anya "你来了啊！快过来帮我看看这个吊牌有没有问题。"
@@ -2851,7 +2898,6 @@ label chapter_5:
 
     hide me
     show anya casual stand_up at anya_std zorder 10
-    voice "audio/voice/anya_0274.mp3"
     anya "（拍了拍手上的灰）"
     voice "audio/voice/anya_0275.mp3"
     anya "那就好。所有的准备工作都差不多了，就等明天的样衣送到了。"
@@ -2898,7 +2944,6 @@ label chapter_5:
     anya "谢谢！"
 
     show anya casual open_box at anya_std zorder 10
-    voice "audio/voice/anya_0283.mp3"
     anya "（迫不及待地打开箱子，然后愣住了）"
     voice "audio/voice/anya_0284.mp3"
     anya "……"
@@ -2918,13 +2963,11 @@ label chapter_5:
     voice "audio/voice/anya_0286.mp3"
     anya "不可能！我明明看着快递员把样衣装进去的！"
 
-    voice "audio/voice/anya_0287.mp3"
     anya "（翻遍了整个箱子，急得快要哭了）"
     voice "audio/voice/anya_0288.mp3"
     anya "样衣呢？我的样衣去哪里了？"
 
     show anya casual call at anya_std zorder 10
-    voice "audio/voice/anya_0289.mp3"
     anya "（颤抖着拨通了快递员的电话）"
     voice "audio/voice/anya_0290.mp3"
     anya "喂！我的快递怎么是空的？！你把我的样衣弄到哪里去了？"
@@ -2937,7 +2980,6 @@ label chapter_5:
     anya "那什么时候能找回来？明天早上？不行！明天早上我就要用！"
 
     show anya look down at anya_std zorder 10
-    voice "audio/voice/anya_0293.mp3"
     anya "（无力地挂了电话，瘫坐在地上）"
 
     scene cg_ch5_lost_dress with dissolve
@@ -2953,8 +2995,8 @@ label chapter_5:
     anya "所有人都在等着看我的笑话……我就知道，我根本就做不好……"
 
     scene bg_studio_door at bg_cover with dissolve
+    play music "audio/bgm/bgm_tense.mp3"
     show anya casual cry at anya_std zorder 10
-    voice "audio/voice/anya_0297.mp3"
     anya "（双手捂着脸，肩膀剧烈地颤抖着）"
     voice "audio/voice/anya_0298.mp3"
     anya "我真的好没用……"
@@ -3031,7 +3073,6 @@ label chapter_5:
     我 "（天空下起了小雨，气温也降了下来。）"
 
     show anya casual sit_on_steps at anya_std zorder 10
-    voice "audio/voice/anya_0304.mp3"
     anya "（坐在单元楼门口的台阶上，双手抱着膝盖，眼神空洞地看着前方）"
 
     hide anya
@@ -3042,7 +3083,6 @@ label chapter_5:
     hide me
     show anya casual lean_on_me at anya_std zorder 10
     $ anya_affection += 6
-    voice "audio/voice/anya_0305.mp3"
     anya "（轻轻靠在我的肩膀上，声音沙哑）"
     voice "audio/voice/anya_0306.mp3"
     anya "林辰，如果这次找不回样衣，怎么办？"
@@ -3086,7 +3126,6 @@ label chapter_5:
     我 "（当我们从她手里接过那个熟悉的箱子时，我和安雅都松了一口气。）"
 
     show anya casual open_box_happy at anya_std zorder 10
-    voice "audio/voice/anya_0310.mp3"
     anya "（打开箱子，看到那件黑色的「星夜」裙子完好无损地躺在里面，眼泪一下子掉了下来。）"
 
     voice "audio/voice/anya_0311.mp3"
@@ -3105,7 +3144,6 @@ label chapter_5:
     我 "（样衣虽然找回来了，但在运输过程中沾了一点灰尘，还有几颗珠子掉了。）"
 
     show anya casual clean_dress at anya_std zorder 10
-    voice "audio/voice/anya_0312.mp3"
     anya "（小心翼翼地清理着裙子上的灰尘）"
     voice "audio/voice/anya_0313.mp3"
     anya "幸好没有弄坏，不然我真的不知道该怎么办了。"
@@ -3125,7 +3163,6 @@ label chapter_5:
     我 "（工作室里很安静，只有针线穿过布料的声音和我们的呼吸声。）"
 
     show anya look_at_me at anya_std zorder 10
-    voice "audio/voice/anya_0317.mp3"
     anya "（停下手里的活，看着我认真的侧脸，眼神温柔）"
     voice "audio/voice/anya_0318.mp3"
     anya "林辰。"
@@ -3153,7 +3190,6 @@ label chapter_5:
 
 
     show anya stretch at anya_std zorder 10
-    voice "audio/voice/anya_0320.mp3"
     anya "（伸了个懒腰）"
     voice "audio/voice/anya_0321.mp3"
     anya "终于搞定了！"
@@ -3174,8 +3210,7 @@ label chapter_5:
     我 "（天已经蒙蒙亮了，东方的天空泛起了鱼肚白。）"
     我 "（远处的山城还在沉睡，只有零星的灯光亮着。）"
 
-    show anya lean on railing at anya_std zorder 10
-    voice "audio/voice/anya_0323.mp3"
+    show anya casual lean_on_railing at anya_std zorder 10
     anya "（靠在栏杆上，看着远方的日出）"
     voice "audio/voice/anya_0324.mp3"
     anya "好美啊。"
@@ -3183,15 +3218,15 @@ label chapter_5:
     voice "audio/voice/me_0160.mp3"
     我 "嗯。好久没有看过日出了。"
 
-    show anya turn to me at anya_std zorder 10
+    show anya casual turn to me at anya_std zorder 10
     voice "audio/voice/anya_0325.mp3"
     anya "林辰。"
 
     voice "audio/voice/anya_0326.mp3"
     anya "其实……我有话想对你说。"
 
-    hide anya
-    show me look_at_anya at me_std zorder 10
+    hide anya casual
+    show me casual look_at_anya at me_std zorder 10
     voice "audio/voice/me_0161.mp3"
     我 "我也有话想对你说。"
 
@@ -3208,20 +3243,26 @@ label chapter_5:
 
 
         scene bg_studio_rooftop at bg_cover with dissolve
-        show anya cry happy at anya_close zorder 10
+        show anya casual cry_happy at anya_close zorder 10
+        voice "audio/voice/anya_0427.mp3"
         anya "（眼泪一下子掉了下来，笑着捶了我一下）"
+        voice "audio/voice/anya_0428.mp3"
         anya "笨蛋！你怎么现在才说！"
 
+        voice "audio/voice/anya_0429.mp3"
         anya "我早就喜欢你了！从你帮我处理伤口的时候，从你陪我通宵赶宣传册的时候，从你送我萤火虫照片的时候……"
+        voice "audio/voice/anya_0430.mp3"
         anya "我一直在等你说这句话。"
 
-        hide anya
-        show me hug at me_std zorder 10
+        hide anya casual
+        show me casual hug at me_std zorder 10
         我 "（紧紧地抱住她）"
         我 "对不起，让你等了这么久。"
 
-        show anya blush at anya_close zorder 10
+        show anya casual blush at anya_close zorder 10
+        voice "audio/voice/anya_0431.mp3"
         anya "（靠在我的怀里，声音哽咽）"
+        voice "audio/voice/anya_0432.mp3"
         anya "林辰，我喜欢你。真的很喜欢你。"
 
         $ anya_affection += 15
@@ -3234,25 +3275,32 @@ label chapter_5:
         我 "我想和你在一起，不只是工作伙伴。"
 
         scene bg_studio_rooftop at bg_cover with dissolve
-        show anya blush at anya_std zorder 10
+        show anya casual blush at anya_std zorder 10
+        voice "audio/voice/anya_0433.mp3"
         anya "（低下头，手指绞着衣角）"
+        voice "audio/voice/anya_0434.mp3"
         anya "……我……"
 
+        voice "audio/voice/anya_0435.mp3"
         anya "我也喜欢你。但是……我有点害怕。"
 
+        voice "audio/voice/anya_0436.mp3"
         anya "我从来没有谈过恋爱，我不知道怎么和别人相处。"
+        voice "audio/voice/anya_0437.mp3"
         anya "而且，我的品牌才刚刚起步，未来还有很多不确定的事情。"
 
-        hide anya
-        show me smile sincere at me_std zorder 10
+        hide anya casual
+        show me casual smile sincere at me_std zorder 10
         我 "没关系。我们可以慢慢来。"
         我 "不管未来有什么困难，我都会陪你一起面对。"
 
-        hide me
-        show anya look_at_me at anya_std zorder 10
+        hide me casual
+        show anya casual look_at_me at anya_std zorder 10
+        voice "audio/voice/anya_0438.mp3"
         anya "……嗯。"
 
-        show anya blush look away at anya_std zorder 10
+        show anya casual blush look away at anya_std zorder 10
+        voice "audio/voice/anya_0439.mp3"
         anya "那……我们就试试吧。"
 
         $ anya_affection += 5
@@ -3268,23 +3316,28 @@ label chapter_5:
         我 "安雅，我喜欢你。"
 
         scene bg_studio_rooftop at bg_cover with dissolve
-        show anya surprised silent at anya_std zorder 10
+        show anya casual surprised_silent at anya_std zorder 10
+        voice "audio/voice/anya_0440.mp3"
         anya "……"
 
-        show anya look down at anya_std zorder 10
+        show anya casual look_down at anya_std zorder 10
+        voice "audio/voice/anya_0441.mp3"
         anya "对不起，林辰。"
 
+        voice "audio/voice/anya_0442.mp3"
         anya "我……我一直把你当成最好的搭档和朋友。"
+        voice "audio/voice/anya_0443.mp3"
         anya "我从来没有想过别的事情。"
 
-        hide anya
-        show me smile slight at me_std zorder 10
+        hide anya casual
+        show me casual smile slight at me_std zorder 10
         我 "没关系。是我唐突了。"
 
         我 "那我们……还是做朋友吧。"
 
-        hide me
-        show anya nod at anya_std zorder 10
+        hide me casual
+        show anya casual nod at anya_std zorder 10
+        voice "audio/voice/anya_0444.mp3"
         anya "……嗯。"
 
         $ anya_affection -= 5
@@ -3301,18 +3354,17 @@ label chapter_5:
     # ---- 结尾过渡 ----
     scene bg_anya_studio at bg_cover with fade
 
-    show anya look_at_clock at anya_std zorder 10
+    show anya casual look_at_clock at anya_std zorder 10
     voice "audio/voice/anya_0327.mp3"
     anya "啊！已经八点了！我们该去发布会现场了！"
 
-    hide anya
-    show me smile at me_std zorder 10
+    hide anya casual
+    show me casual smile at me_std zorder 10
     voice "audio/voice/me_0162.mp3"
     我 "好。走吧。"
 
     hide me
     show anya take dress at anya_std zorder 10
-    voice "audio/voice/anya_0328.mp3"
     anya "（小心翼翼地抱起「星夜」裙子）"
 
     voice "audio/voice/anya_0329.mp3"
@@ -3336,17 +3388,16 @@ label chapter_5:
 
 # ===================== 第六章：夏天的约定 =====================
 label chapter_6:
-    scene bg_conference_hall_backstage at bg_cover with fade
+    scene bg_anya_studio at bg_cover with fade
     show weather_sunny
     play music "audio/bgm/bgm_tense.mp3" fadein 1.0
     play sound "audio/sfx/env_crowd_far.mp3" fadein 0.3
 
-    我 "（上午八点半，发布会后台。）"
+    我 "（上午八点半，发布会后台化妆间。）"
     我 "（工作人员来来往往，紧张地做着最后的准备。）"
     我 "（安雅正在化妆镜前做最后的造型，穿着那件「星夜」裙子，美得像从画里走出来的一样。）"
 
     show anya wear_starry_night_dress at anya_std zorder 10
-    voice "audio/voice/anya_0330.mp3"
     anya "（通过镜子看着我）"
     voice "audio/voice/anya_0331.mp3"
     anya "你怎么才来？我还以为你要迟到了。"
@@ -3359,15 +3410,18 @@ label chapter_6:
     voice "audio/voice/anya_0332.mp3"
     anya "哼，算你识相。"
 
-    show 主持人_enter at npc_std zorder 10
+    hide anya
+    hide me
+    show 主持人_enter at npc_right zorder 10
     voice "audio/voice/host_0001.mp3"
     主持人 "安小姐，还有十分钟发布会就要开始了。"
 
+    show anya wear_starry_night_dress at anya_std zorder 10
     voice "audio/voice/anya_0333.mp3"
     anya "好，我知道了。"
 
+    hide 主持人
     show anya stand up at anya_std zorder 10
-    voice "audio/voice/anya_0334.mp3"
     anya "（深吸一口气，手微微发抖）"
     voice "audio/voice/anya_0335.mp3"
     anya "我……我有点紧张。"
@@ -3391,7 +3445,6 @@ label chapter_6:
     我 "（台下的观众都看呆了，随即爆发出热烈的掌声。）"
 
     show anya walk_runway at anya_std zorder 10
-    voice "audio/voice/anya_0337.mp3"
     anya "（走到T台中央，停下脚步，对着台下深深鞠了一躬）"
     voice "audio/voice/anya_0338.mp3"
     anya "大家好，我是「暗夜蔷薇」的主理人安雅。"
@@ -3407,7 +3460,6 @@ label chapter_6:
     anya "而且，我不是一个人在战斗。"
 
     show anya look_at_me at anya_std zorder 10
-    voice "audio/voice/anya_0344.mp3"
     anya "（目光穿过人群，落在我的身上）"
     voice "audio/voice/anya_0345.mp3"
     anya "谢谢你，林辰。"
@@ -3423,7 +3475,6 @@ label chapter_6:
     play sound "audio/sfx/env_crowd_cheer.mp3" fadein 0.3
 
     show anya run_to_me at anya_std zorder 10
-    voice "audio/voice/anya_0346.mp3"
     anya "（发布会结束后，安雅兴奋地跑向我）"
     voice "audio/voice/anya_0347.mp3"
     anya "林辰！我们成功了！"
@@ -3432,12 +3483,12 @@ label chapter_6:
     voice "audio/voice/me_0166.mp3"
     我 "恭喜你，安雅。你做到了。"
 
-    voice "audio/voice/anya_0348.mp3"
     anya "（靠在我的怀里，声音哽咽）"
     voice "audio/voice/anya_0349.mp3"
     anya "我真的做到了……我以为我永远都做不到……"
 
-    show 王总_enter at npc_std zorder 10
+    hide anya
+    show 王总_enter at npc_right zorder 10
     voice "audio/voice/president_wang_0001.mp3"
     王总 "安小姐，恭喜恭喜！发布会非常成功！"
     voice "audio/voice/president_wang_0002.mp3"
@@ -3452,7 +3503,7 @@ label chapter_6:
     我 "（五百万。对于一个连房租都经常拖欠的独立设计师来说，这是她这辈子听到的最大数字。）"
     我 "（我注意到她握着玻璃杯的手，指节泛白。）"
 
-    show 王总_nod at npc_std zorder 10
+    show 王总_nod at npc_right zorder 10
     voice "audio/voice/president_wang_0004.mp3"
     王总 "是的。这是我们的合同，你可以先看看。"
 
@@ -3471,12 +3522,11 @@ label chapter_6:
 label perfect_ending_ch6:
     scene bg_conference_hall_backstage at bg_cover with fade
     show anya wear_starry_night_dress look_at_me at anya_std zorder 10
-    voice "audio/voice/anya_0351.mp3"
     anya "（抬起头，看着我，眼神坚定）"
     voice "audio/voice/anya_0352.mp3"
     anya "对不起，王总。我不能接受你的收购。"
 
-    show 王总_surprised at npc_std zorder 10
+    show 王总_surprised at npc_right zorder 10
     voice "audio/voice/president_wang_0005.mp3"
     王总 "为什么？五百万已经是很高的价格了。"
 
@@ -3486,11 +3536,12 @@ label perfect_ending_ch6:
     voice "audio/voice/anya_0354.mp3"
     anya "虽然现在很难，但我相信，只要我和林辰一起努力，总有一天会成功的。"
 
-    show 王总_disappointed at npc_std zorder 10
+    show 王总_disappointed at npc_right zorder 10
     voice "audio/voice/president_wang_0006.mp3"
     王总 "好吧。既然你已经决定了，我也不勉强。如果以后改变主意了，随时可以联系我。"
 
-    show 王总_leave at npc_std zorder 10
+    show 王总_leave at npc_right zorder 10
+    hide 王总
     show me smile at me_std zorder 10
     voice "audio/voice/me_0167.mp3"
     我 "你真的想好了吗？五百万不是小数目。"
@@ -3556,7 +3607,6 @@ label perfect_ending_ch6:
     我 "（我毕业之后，成为了品牌的全职设计总监。）"
 
     show anya lean on me at anya_std zorder 10
-    voice "audio/voice/anya_0365.mp3"
     anya "（靠在我的肩膀上，看着远处的夕阳）"
     voice "audio/voice/anya_0366.mp3"
     anya "时间过得真快啊。一转眼，一年就过去了。"
@@ -3569,7 +3619,6 @@ label perfect_ending_ch6:
     我 "你看。"
 
     show anya look_at_me at anya_std zorder 10
-    voice "audio/voice/anya_0367.mp3"
     anya "（接过照片，是我们初遇时我偷拍的那张）"
     voice "audio/voice/anya_0368.mp3"
     anya "你还留着这张照片啊。"
@@ -3598,16 +3647,16 @@ label perfect_ending_ch6:
 label normal_ending_ch6:
     scene bg_conference_hall_backstage at bg_cover with fade
     show anya look down at anya_std zorder 10
-    voice "audio/voice/anya_0370.mp3"
     anya "（拿着合同，犹豫了很久）"
     voice "audio/voice/anya_0371.mp3"
     anya "对不起，王总。我还是想再试试自己做。"
 
-    show 王总_nod at npc_std zorder 10
+    show 王总_nod at npc_right zorder 10
     voice "audio/voice/president_wang_0007.mp3"
     王总 "好吧。我尊重你的决定。"
 
-    show 王总_leave at npc_std zorder 10
+    show 王总_leave at npc_right zorder 10
+    hide 王总
     show me smile at me_std zorder 10
     voice "audio/voice/me_0176.mp3"
     我 "我还以为你会接受。"
@@ -3696,7 +3745,6 @@ label normal_ending_ch6:
 label sad_ending_ch6:
     scene bg_conference_hall_backstage at bg_cover with fade
     show anya look down at anya_std zorder 10
-    voice "audio/voice/anya_0381.mp3"
     anya "（沉默了很久，终于抬起头）"
     voice "audio/voice/anya_0382.mp3"
     anya "好，我同意收购。"
@@ -3759,7 +3807,6 @@ label sad_ending_ch6:
     我 "不用说对不起。我理解你。"
 
     show anya walk beside me at anya_std zorder 10
-    voice "audio/voice/anya_0393.mp3"
     anya "（紧紧地抱住我，哭了起来）"
     voice "audio/voice/anya_0394.mp3"
     anya "我会想你的。"
@@ -3775,7 +3822,6 @@ label sad_ending_ch6:
     play sound "audio/sfx/env_airport_announcement.mp3" fadein 0.3
 
     show anya turn to leave at anya_std zorder 10
-    voice "audio/voice/anya_0396.mp3"
     anya "（转身走向安检口，没有回头。）"
     我 "（看着她的背影消失在人群中，眼泪终于忍不住掉了下来。）"
 
