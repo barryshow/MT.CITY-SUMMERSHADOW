@@ -328,7 +328,7 @@ init python:
         "bg_airport", "bg_train_station",
     ]
     for _bg in _bg_images:
-        renpy.image(tuple(_bg.split()), Transform("backgrounds/" + _bg + ".png", xysize=(1280, 720)))
+        renpy.image(tuple(_bg.split()), Transform("images/backgrounds/" + _bg + ".png", xysize=(1280, 720)))
 
     # 天气叠加层注册
     _weather_images = [
@@ -336,7 +336,7 @@ init python:
         "weather_hot_summer_mountain_city", "weather_rain_start", "weather_sunny",
     ]
     for _w in _weather_images:
-        renpy.image(tuple(_w.split()), Transform("backgrounds/" + _w + ".png", xysize=(1280, 720)))
+        renpy.image(tuple(_w.split()), Transform("images/backgrounds/" + _w + ".png", xysize=(1280, 720)))
 
 
 label start:
@@ -3309,7 +3309,8 @@ label chapter_5:
         scene black with fade
         show text "她虽然没有完全答应，但至少……没有拒绝。" with dissolve
         pause
-        jump chapter_6
+        scene black with fade
+        jump chapter_5_transition
 
     else:
         # 告白失败结局
@@ -3386,10 +3387,44 @@ label chapter_5:
     jump chapter_6
 
 
+label chapter_5_transition:
+    scene bg_anya_studio at bg_cover with fade
+
+    show anya casual look_at_clock at anya_std zorder 10
+    voice "audio/voice/anya_0327.mp3"
+    anya "啊！已经八点了！我们该去发布会现场了！"
+
+    hide anya casual
+    show me casual smile at me_std zorder 10
+    voice "audio/voice/me_0162.mp3"
+    我 "好。走吧。"
+
+    hide me
+    show anya take dress at anya_std zorder 10
+    anya "（小心翼翼地抱起「星夜」裙子）"
+
+    voice "audio/voice/anya_0329.mp3"
+    anya "今天的发布会，一定会成功的。"
+
+    hide anya
+    show me confident at me_std zorder 10
+    voice "audio/voice/me_0163.mp3"
+    我 "一定会的。"
+
+    scene black with fade
+
+    show text "第五章：暗夜蔷薇的绽放 完" with fade
+    pause
+    show text "你的选择将决定最终的结局" with fade
+    pause
+
+    scene black with fade
+    jump chapter_6
+
+
 # ===================== 第六章：夏天的约定 =====================
 label chapter_6:
-    scene bg_anya_studio at bg_cover with fade
-    show weather_sunny
+    scene bg_conference_hall_backstage at bg_cover with fade
     play music "audio/bgm/bgm_tense.mp3" fadein 1.0
     play sound "audio/sfx/env_crowd_far.mp3" fadein 0.3
 
@@ -3416,12 +3451,12 @@ label chapter_6:
     voice "audio/voice/host_0001.mp3"
     主持人 "安小姐，还有十分钟发布会就要开始了。"
 
+    hide 主持人
     show anya wear_starry_night_dress at anya_std zorder 10
     voice "audio/voice/anya_0333.mp3"
     anya "好，我知道了。"
 
-    hide 主持人
-    show anya stand up at anya_std zorder 10
+    # 安雅站起身
     anya "（深吸一口气，手微微发抖）"
     voice "audio/voice/anya_0335.mp3"
     anya "我……我有点紧张。"
@@ -3555,8 +3590,7 @@ label perfect_ending_ch6:
     anya "而且，有你在我身边，我什么都不怕。"
 
     scene bg_nanshan_mountain at bg_cover with fade
-    show weather_clear
-    play music "audio/bgm/bgm_romantic.mp3" fadein 1.0
+    show weather_clear at bg_cover
     play sound "audio/sfx/env_crickets.mp3" fadein 0.3
 
     我 "（发布会结束后的第二天晚上，我带安雅去了南山。）"
@@ -3600,7 +3634,7 @@ label perfect_ending_ch6:
     我 "我也爱你，安雅。"
 
     scene bg_rooftop_one_year_later at bg_cover with fade
-    show weather_sunny
+    show weather_sunny at bg_cover
     play music "audio/bgm/bgm_ending.mp3" fadein 1.0
     我 "（一年后。）"
     我 "（「暗夜蔷薇」已经成为了国内知名的Lolita品牌。）"
@@ -3674,7 +3708,7 @@ label normal_ending_ch6:
     我 "等你毕业之后，我们一起努力。"
 
     scene bg_university_gate_morning at bg_cover with fade
-    show weather_sunny
+    show weather_sunny at bg_cover
     play music "audio/bgm/bgm_warm.mp3" fadein 1.0
     我 "（又过了一年，安雅毕业了。）"
     我 "（她没有接受任何公司的收购，继续经营着「暗夜蔷薇」。）"
@@ -3717,7 +3751,7 @@ label normal_ending_ch6:
     我 "好。我等你。"
 
     scene bg_train_station at bg_cover with fade
-    show weather_sunny
+    show weather_sunny at bg_cover
     play music "audio/bgm/bgm_hopeful.mp3" fadein 1.0
     show anya wave at anya_std zorder 10
     voice "audio/voice/anya_0380.mp3"
@@ -3767,7 +3801,7 @@ label sad_ending_ch6:
     我 "如果你已经决定了，我支持你。"
 
     scene bg_river_walk at bg_cover with fade
-    show weather_heavy_rain
+    show weather_heavy_rain at bg_cover
     play music "audio/bgm/bgm_sad.mp3" fadein 1.0
     play sound "audio/sfx/env_rain_light.mp3"
 
@@ -3818,7 +3852,7 @@ label sad_ending_ch6:
     我 "会的。我会一直等你。"
 
     scene bg_airport at bg_cover with fade
-    show weather_heavy_rain
+    show weather_heavy_rain at bg_cover
     play sound "audio/sfx/env_airport_announcement.mp3" fadein 0.3
 
     show anya turn to leave at anya_std zorder 10
@@ -3826,7 +3860,7 @@ label sad_ending_ch6:
     我 "（看着她的背影消失在人群中，眼泪终于忍不住掉了下来。）"
 
     scene bg_studio_rooftop at bg_cover with fade
-    show weather_sunny
+    show weather_sunny at bg_cover
     play music "audio/bgm/bgm_ending.mp3" fadein 1.0
     我 "（三个月后。）"
     我 "（安雅去了上海之后，我们渐渐失去了联系。）"
