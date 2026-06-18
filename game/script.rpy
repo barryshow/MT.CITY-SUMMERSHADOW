@@ -3523,7 +3523,7 @@ label chapter_6:
     anya "我真的做到了……我以为我永远都做不到……"
 
     hide anya
-    show 王总_enter at npc_right zorder 10
+    show 王总_enter at npc_std zorder 10
     voice "audio/voice/president_wang_0001.mp3"
     王总 "安小姐，恭喜恭喜！发布会非常成功！"
     voice "audio/voice/president_wang_0002.mp3"
@@ -3538,7 +3538,7 @@ label chapter_6:
     我 "（五百万。对于一个连房租都经常拖欠的独立设计师来说，这是她这辈子听到的最大数字。）"
     我 "（我注意到她握着玻璃杯的手，指节泛白。）"
 
-    show 王总_nod at npc_right zorder 10
+    show 王总_nod at npc_std zorder 10
     voice "audio/voice/president_wang_0004.mp3"
     王总 "是的。这是我们的合同，你可以先看看。"
 
@@ -3546,9 +3546,9 @@ label chapter_6:
     我 "（安雅拿着合同，陷入了沉默。）"
     我 "（五百万，对于一个刚起步的独立品牌来说，无疑是一个天文数字。）"
 
-    if anya_affection >= 155 and trust_level >= 120:
+    if anya_affection >= 150 and trust_level >= 115:
         jump perfect_ending_ch6
-    elif anya_affection >= 110 and trust_level >= 85:
+    elif anya_affection >= 100 and trust_level >= 75:
         jump normal_ending_ch6
     else:
         jump sad_ending_ch6
@@ -3561,7 +3561,7 @@ label perfect_ending_ch6:
     voice "audio/voice/anya_0352.mp3"
     anya "对不起，王总。我不能接受你的收购。"
 
-    show 王总_surprised at npc_right zorder 10
+    show 王总_surprised at npc_std zorder 10
     voice "audio/voice/president_wang_0005.mp3"
     王总 "为什么？五百万已经是很高的价格了。"
 
@@ -3571,11 +3571,11 @@ label perfect_ending_ch6:
     voice "audio/voice/anya_0354.mp3"
     anya "虽然现在很难，但我相信，只要我和林辰一起努力，总有一天会成功的。"
 
-    show 王总_disappointed at npc_right zorder 10
+    show 王总_disappointed at npc_std zorder 10
     voice "audio/voice/president_wang_0006.mp3"
     王总 "好吧。既然你已经决定了，我也不勉强。如果以后改变主意了，随时可以联系我。"
 
-    show 王总_leave at npc_right zorder 10
+    show 王总_leave at npc_std zorder 10
     hide 王总
     show me smile at me_std zorder 10
     voice "audio/voice/me_0167.mp3"
@@ -3685,11 +3685,11 @@ label normal_ending_ch6:
     voice "audio/voice/anya_0371.mp3"
     anya "对不起，王总。我还是想再试试自己做。"
 
-    show 王总_nod at npc_right zorder 10
+    show 王总_nod at npc_std zorder 10
     voice "audio/voice/president_wang_0007.mp3"
     王总 "好吧。我尊重你的决定。"
 
-    show 王总_leave at npc_right zorder 10
+    show 王总_leave at npc_std zorder 10
     hide 王总
     show me smile at me_std zorder 10
     voice "audio/voice/me_0176.mp3"
@@ -3708,7 +3708,6 @@ label normal_ending_ch6:
     我 "等你毕业之后，我们一起努力。"
 
     scene bg_university_gate_morning at bg_cover with fade
-    show weather_sunny at bg_cover
     play music "audio/bgm/bgm_warm.mp3" fadein 1.0
     我 "（又过了一年，安雅毕业了。）"
     我 "（她没有接受任何公司的收购，继续经营着「暗夜蔷薇」。）"
@@ -3751,7 +3750,6 @@ label normal_ending_ch6:
     我 "好。我等你。"
 
     scene bg_train_station at bg_cover with fade
-    show weather_sunny at bg_cover
     play music "audio/bgm/bgm_hopeful.mp3" fadein 1.0
     show anya wave at anya_std zorder 10
     voice "audio/voice/anya_0380.mp3"
