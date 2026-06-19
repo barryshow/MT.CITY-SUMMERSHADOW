@@ -245,6 +245,19 @@ image anya smile_confident = "characters_alpha/anya_look_up_determined.png"
 image anya take_my_hand = "characters_alpha/anya_take_my_hand.png"
 image anya wear_starry_night_dress blush = "characters_alpha/anya_blush_post.png"
 image anya wear_starry_night_dress look_at_me = "characters_alpha/anya_look_at_me.png"
+image anya wear_starry_night_dress stand_up = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress smile soft = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress surprised silent = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress smile = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress look up surprised = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress lean on me = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress look_down = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress wave = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress take = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress look out window = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress cry = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress walk beside me = "characters_alpha/anya_wear_starry_night_dress.png"
+image anya wear_starry_night_dress turn to leave = "characters_alpha/anya_wear_starry_night_dress.png"
 image anya look_up = "characters_alpha/anya_look_up_surprised.png"
 image anya look_at_river = "characters_alpha/anya_look_out_window.png"
 image anya wave_to_me = "characters_alpha/anya_wave_goodbye.png"
@@ -300,7 +313,7 @@ init python:
         "cg_kiss", "cg_final_photo",
     ]
     for _cg in _cg_images:
-        renpy.image(tuple(_cg.split()), "cg/" + _cg + ".png")
+        renpy.image(tuple(_cg.split()), "images/cg/" + _cg + ".png")
 
     # 背景图注册
     _bg_images = [
@@ -3456,7 +3469,7 @@ label chapter_6:
     voice "audio/voice/anya_0333.mp3"
     anya "好，我知道了。"
 
-    # 安雅站起身
+    show anya wear_starry_night_dress stand_up at anya_std zorder 10
     anya "（深吸一口气，手微微发抖）"
     voice "audio/voice/anya_0335.mp3"
     anya "我……我有点紧张。"
@@ -3466,7 +3479,7 @@ label chapter_6:
     voice "audio/voice/me_0165.mp3"
     我 "我会在台下，一直看着你。"
 
-    show anya smile soft at anya_std zorder 10
+    show anya wear_starry_night_dress smile soft at anya_std zorder 10
     voice "audio/voice/anya_0336.mp3"
     anya "嗯。"
 
@@ -3494,8 +3507,7 @@ label chapter_6:
     voice "audio/voice/anya_0343.mp3"
     anya "而且，我不是一个人在战斗。"
 
-    show anya look_at_me at anya_std zorder 10
-    anya "（目光穿过人群，落在我的身上）"
+    show anya wear_starry_night_dress look_at_me at anya_std zorder 10
     voice "audio/voice/anya_0345.mp3"
     anya "谢谢你，林辰。"
 
@@ -3531,7 +3543,7 @@ label chapter_6:
     voice "audio/voice/president_wang_0003.mp3"
     王总 "如果你同意的话，我们会给你提供最好的资源和平台，让你的品牌走向全国。"
 
-    show anya surprised silent at anya_std zorder 10
+    show anya wear_starry_night_dress surprised silent at anya_std zorder 10
     voice "audio/voice/anya_0350.mp3"
     anya "五百万？"
 
@@ -3565,7 +3577,7 @@ label perfect_ending_ch6:
     voice "audio/voice/president_wang_0005.mp3"
     王总 "为什么？五百万已经是很高的价格了。"
 
-    show anya smile at anya_std zorder 10
+    show anya wear_starry_night_dress smile at anya_std zorder 10
     voice "audio/voice/anya_0353.mp3"
     anya "因为「暗夜蔷薇」是我的孩子。我想亲手把它养大。"
     voice "audio/voice/anya_0354.mp3"
@@ -3594,9 +3606,8 @@ label perfect_ending_ch6:
     play sound "audio/sfx/env_crickets.mp3" fadein 0.3
 
     我 "（发布会结束后的第二天晚上，我带安雅去了南山。）"
-    我 "（兑现第四章的承诺，带她来看星星。）"
 
-    show anya look up surprised at anya_std zorder 10
+    show anya wear_starry_night_dress look up surprised at anya_std zorder 10
     voice "audio/voice/anya_0358.mp3"
     anya "哇……好多星星啊。"
     voice "audio/voice/anya_0359.mp3"
@@ -3606,7 +3617,7 @@ label perfect_ending_ch6:
     voice "audio/voice/me_0168.mp3"
     我 "我说过，会带你来南山看星星的。"
 
-    show anya lean on me at anya_std zorder 10
+    show anya wear_starry_night_dress lean on me at anya_std zorder 10
     voice "audio/voice/anya_0360.mp3"
     anya "嗯。你说过的话，都做到了。"
     voice "audio/voice/anya_0361.mp3"
@@ -3621,7 +3632,7 @@ label perfect_ending_ch6:
     voice "audio/voice/me_0170.mp3"
     我 "那时候我就在想，这个女孩真好看，怎么会一个人坐在那种地方。"
 
-    show anya look_at_me at anya_std zorder 10
+    show anya wear_starry_night_dress look_at_me at anya_std zorder 10
     voice "audio/voice/anya_0363.mp3"
     anya "那时候我怎么也不会想到，那个偷拍我的男生，会成为我生命中最重要的人。"
 
@@ -3680,7 +3691,7 @@ label perfect_ending_ch6:
 # ===================== 普通结局：未来可期 =====================
 label normal_ending_ch6:
     scene bg_conference_hall_backstage at bg_cover with fade
-    show anya look down at anya_std zorder 10
+    show anya wear_starry_night_dress look_down at anya_std zorder 10
     anya "（拿着合同，犹豫了很久）"
     voice "audio/voice/anya_0371.mp3"
     anya "对不起，王总。我还是想再试试自己做。"
@@ -3695,7 +3706,7 @@ label normal_ending_ch6:
     voice "audio/voice/me_0176.mp3"
     我 "我还以为你会接受。"
 
-    show anya blush at anya_std zorder 10
+    show anya wear_starry_night_dress blush at anya_std zorder 10
     voice "audio/voice/anya_0372.mp3"
     anya "我也犹豫过。但是一想到要把「暗夜蔷薇」交给别人，我就舍不得。"
     voice "audio/voice/anya_0373.mp3"
@@ -3776,7 +3787,7 @@ label normal_ending_ch6:
 # ===================== 遗憾结局：夏日终曲 =====================
 label sad_ending_ch6:
     scene bg_conference_hall_backstage at bg_cover with fade
-    show anya look down at anya_std zorder 10
+    show anya wear_starry_night_dress look_down at anya_std zorder 10
     anya "（沉默了很久，终于抬起头）"
     voice "audio/voice/anya_0382.mp3"
     anya "好，我同意收购。"
@@ -3785,7 +3796,7 @@ label sad_ending_ch6:
     voice "audio/voice/me_0184.mp3"
     我 "安雅？"
 
-    show anya look up surprised at anya_std zorder 10
+    show anya wear_starry_night_dress look up surprised at anya_std zorder 10
     voice "audio/voice/anya_0383.mp3"
     anya "我累了，林辰。"
     voice "audio/voice/anya_0384.mp3"
