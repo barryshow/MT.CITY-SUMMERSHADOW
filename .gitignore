@@ -1,0 +1,26 @@
+# Ren'Py generated
+*.rpyc
+*.rpyb
+cache/
+saves/
+log.txt
+traceback.txt
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE / config
+.claude/
+.idea/
+.vscode/
+
+# Build outputs
+dist/
+*.zip
+*.tar.gz
+*.dmg
+
+# Backup files
+*.bak
+*.bak_*
