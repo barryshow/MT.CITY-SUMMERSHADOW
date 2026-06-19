@@ -1,0 +1,30 @@
+# Task completion documents (load only when explicitly requested)
+.claude/completions/**
+
+# Session files (load only when explicitly requested)
+.claude/sessions/**
+
+# Detailed docs (load specific files as needed, not everything)
+.claude/docs/learnings/**
+.claude/docs/archive/**
+
+# Skill repos (source code, not needed at runtime)
+.claude/skills/anthropic-skills/**
+.claude/skills/token-optimizer/**
+.claude/skills/docx/**
+.claude/skills/pptx/**
+.claude/skills/xlsx/**
+.claude/skills/pdf/**
+
+# Image processing backups (don't load into context)
+game/images/characters_backup/**
+game/images/characters_alpha/**
+game/images/characters/std/**
+game/images/characters/close/**
+
+# Compiled files
+game/**/*.rpyc
+game/cache/**
+
+# Build artifacts
+**/__pycache__/**

@@ -1,0 +1,17 @@
+# Ren'Py generated files
+*.rpyc
+*.rpy.bak
+*.rpy.backup.*
+
+# Save files
+saves/
+
+# Cache
+cache/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Backup directories
+audio/voice.bak*/
